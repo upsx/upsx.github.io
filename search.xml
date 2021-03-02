@@ -21,7 +21,7 @@
   <entry>
     <title>面试经历</title>
     <url>/2020/12/28/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/</url>
-    <content><![CDATA[<h1 id="CVTE寒暑假实习面试"><a href="#CVTE寒暑假实习面试" class="headerlink" title="CVTE寒暑假实习面试"></a>CVTE寒暑假实习面试</h1><h2 id="2020-12-26笔试"><a href="#2020-12-26笔试" class="headerlink" title="2020-12-26笔试"></a>2020-12-26笔试</h2><ol>
+    <content><![CDATA[<h1 id="CVTE"><a href="#CVTE" class="headerlink" title="CVTE"></a>CVTE</h1><h2 id="2020-12-26笔试-挂"><a href="#2020-12-26笔试-挂" class="headerlink" title="2020-12-26笔试 (挂)"></a>2020-12-26笔试 (挂)</h2><ol>
 <li><p>20道不定项选择题：java语言基础、JVM、线程池等</p>
 </li>
 <li><p>算法题1：<a href="https://leetcode-cn.com/problems/candy/">分发糖果</a></p>
@@ -35,6 +35,15 @@
 <li>用户离线编辑笔记，联网和进行多设备同步。</li>
 </ul>
 </li>
+</ol>
+<h1 id="蚂蚁金服-民生部门"><a href="#蚂蚁金服-民生部门" class="headerlink" title="蚂蚁金服-民生部门"></a>蚂蚁金服-民生部门</h1><h2 id="2021-2-29-电话一面30分钟-挂"><a href="#2021-2-29-电话一面30分钟-挂" class="headerlink" title="2021-2-29 电话一面30分钟(挂)"></a>2021-2-29 电话一面30分钟(挂)</h2><ol>
+<li>秒杀系统介绍一下（第一次面试，没有准备好，挂在这里）</li>
+<li>zookeeper服务发现与注册实现，一致性哈希算法介绍一下</li>
+<li>八股：http和https的差别，冒泡和快排的时空复杂度。</li>
+</ol>
+<h1 id="蚂蚁金服-广告投放"><a href="#蚂蚁金服-广告投放" class="headerlink" title="蚂蚁金服-广告投放"></a>蚂蚁金服-广告投放</h1><h2 id="2021-3-2-电话一面20分钟"><a href="#2021-3-2-电话一面20分钟" class="headerlink" title="2021-3-2 电话一面20分钟"></a>2021-3-2 电话一面20分钟</h2><ol>
+<li>秒杀系统介绍一下，随后根据回答问了几个问题（10分钟）</li>
+<li>闲聊，相互提问题了解一下对方，氛围很轻松（10分钟）</li>
 </ol>
 ]]></content>
   </entry>

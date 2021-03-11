@@ -45,6 +45,59 @@
 <li>秒杀系统介绍一下，随后根据回答问了几个问题（10分钟）</li>
 <li>闲聊，相互提问题了解一下对方，氛围很轻松（10分钟）</li>
 </ol>
+<h2 id="2021-3-5-电话二面30分钟"><a href="#2021-3-5-电话二面30分钟" class="headerlink" title="2021-3-5 电话二面30分钟"></a>2021-3-5 电话二面30分钟</h2><ol>
+<li>自我介绍</li>
+<li>秒杀系统讲一遍</li>
+<li>两个比赛讲一遍</li>
+<li>场景1：怎么防止表单重复提交</li>
+<li>场景2：秒杀系统，14亿人，只放5亿人的请求进来，怎么设计？</li>
+<li>场景3：内存4G，磁盘两个大文件64G，存储着URL文件，逗号分割，怎么查找两个文件共有的URL？</li>
+<li>场景4：转账的事务实现介绍一下。（seata）</li>
+</ol>
+<h1 id="阿里CBU"><a href="#阿里CBU" class="headerlink" title="阿里CBU"></a>阿里CBU</h1><h2 id="2021-3-3-电话一面35分钟"><a href="#2021-3-3-电话一面35分钟" class="headerlink" title="2021-3-3 电话一面35分钟"></a>2021-3-3 电话一面35分钟</h2><p>全程八股 + 简历个别技术点原理提问</p>
+<ol>
+<li>自我介绍</li>
+<li>java面向对象语言的三大特性及解释</li>
+<li>protect作用域</li>
+<li>1.7 和 1.8  的HashMap</li>
+<li>1.8的HashMap为什么改成尾插法</li>
+<li>1.7和1.8的concurrentHashMap</li>
+<li>线程池的参数及4种默认的线程池介绍</li>
+<li>newCachedThreadPool会无限创建线程吗</li>
+<li>JVM的内存结构</li>
+<li>虚拟机栈的内存结构</li>
+<li>堆的内存结构及新生代各个区域的内存比例</li>
+<li>对象在堆的内存分配策略</li>
+<li>CMS和parNew的区别</li>
+<li>Spring的bean的创建过程</li>
+<li>@Autowire注解的加载过程</li>
+<li>Sentinel的底层实现</li>
+<li>hystrix服务降级后会发生什么</li>
+</ol>
+<h1 id="蚂蚁金服-智能引擎"><a href="#蚂蚁金服-智能引擎" class="headerlink" title="蚂蚁金服-智能引擎"></a>蚂蚁金服-智能引擎</h1><h2 id="2021-3-4-电话一面30分钟"><a href="#2021-3-4-电话一面30分钟" class="headerlink" title="2021-3-4 电话一面30分钟"></a>2021-3-4 电话一面30分钟</h2><ol>
+<li>秒杀系统讲一遍</li>
+<li>netty的NIO介绍一下</li>
+<li>一致性哈希负载均衡算法介绍一下</li>
+<li>cookie和session介绍</li>
+<li>session_id被拦截怎么办</li>
+<li>http和https的区别</li>
+<li>。。。</li>
+</ol>
+<h2 id="2021-3-4-电话二面20分钟"><a href="#2021-3-4-电话二面20分钟" class="headerlink" title="2021-3-4 电话二面20分钟"></a>2021-3-4 电话二面20分钟</h2><ol>
+<li>秒杀系统简单讲一遍</li>
+<li>hashmap讲一遍</li>
+<li>hashmap并发问题</li>
+<li>。。。</li>
+</ol>
+<h1 id="菜鸟网络-国际物流"><a href="#菜鸟网络-国际物流" class="headerlink" title="菜鸟网络-国际物流"></a>菜鸟网络-国际物流</h1><h2 id="2021-3-10-电话一面30分钟"><a href="#2021-3-10-电话一面30分钟" class="headerlink" title="2021-3-10 电话一面30分钟"></a>2021-3-10 电话一面30分钟</h2><ol>
+<li>秒杀系统的设计</li>
+<li>分布式会话的实现</li>
+<li>netty的NIO实现</li>
+<li>服务的注册与发现的实现</li>
+<li>链路状态的检测</li>
+<li>负载均衡算法</li>
+<li>分布式锁</li>
+</ol>
 ]]></content>
   </entry>
 </search>

@@ -98,6 +98,34 @@
 <li>负载均衡算法</li>
 <li>分布式锁</li>
 </ol>
+<h2 id="2021-3-12-电话二面37分钟（部门boss给了A）"><a href="#2021-3-12-电话二面37分钟（部门boss给了A）" class="headerlink" title="2021-3-12 电话二面37分钟（部门boss给了A）"></a>2021-3-12 电话二面37分钟（部门boss给了A）</h2><ol>
+<li>介绍一下你自己？主要问这些项目是你自学的还是实习或者实验室项目。（boss啊，只能老实回答，不能糊弄）</li>
+<li>秒杀系统设计。你的秒杀是异步实现，用户体验肯定差，实际不是这样实现的，所以你知道淘宝系统的实际设计吗（seata是一种刚刚及格的回答，性能差，基本不会用，但知道seata还算了解），所以基本不会答，必须要去了解。</li>
+<li>系统是怎么部署的？系统压测？用什么工具？</li>
+<li>CPU很高是为什么？系统排除bug？你有什么经验吗？</li>
+<li>你查看过JVM的内存吗？JVM怎么影响程序的性能？</li>
+<li>你用过top命令吗？其中node节点（？）是干什么的？</li>
+<li>你实现过注解吗？在哪里干什么用的？</li>
+<li>你为什么用protostuff序列化机制？</li>
+<li>哪里听过上下文切换？答：进程线程，反问：你对内核态和用户态不知道吗？</li>
+<li>你对反射机制的了解？项目中用过没？</li>
+<li>JVM的内存结构。问：你是不是少回答了一个？牛逼。</li>
+<li>方法区什么情况会溢出</li>
+<li>系统设计的开放封闭原则</li>
+<li>什么样的代码是好代码？</li>
+<li>英语口语飙几句（尬死，你们大学生是不是英语课就说几句，平时当哑巴？答：大部分人是。）</li>
+<li>你家哪里？工作地点有要求吗？</li>
+<li>你对国外外派或出差什么看法？答：外派需要平衡生活和工作。出差可以接收。</li>
+<li>反问？压迫式的拷问让我紧张，反问环节还让我卡顿了。boss很nice，详细给我介绍各种业务，表现出一定的热情。</li>
+</ol>
+<h2 id="2021-3-12-笔试1小时"><a href="#2021-3-12-笔试1小时" class="headerlink" title="2021-3-12 笔试1小时"></a>2021-3-12 笔试1小时</h2><ol>
+<li><p>电话簿，最短路径，bfs解决。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> ans = INT_MAX;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, unordered_map&lt;<span class="keyword">int</span>, vector&lt;<span class="keyword">int</span>&gt;&gt;&amp; mp, unordered_set&lt;bool&gt;&amp; visited, <span class="keyword">int</span> cnt)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (visited[x])</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    visited[x] = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">if</span> (mp.count(x)) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num: mp[x]) &#123;</span><br><span class="line">            <span class="keyword">if</span> (num == y) &#123;</span><br><span class="line">                ans = min(ans, cnt);</span><br><span class="line">                visited[x - <span class="number">1</span>] = <span class="keyword">false</span>;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num: mp[x]) &#123;</span><br><span class="line">            <span class="keyword">if</span> (visited[num] == <span class="keyword">false</span>)</span><br><span class="line">                dfs(num, y, mp, visited, cnt + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    visited[x] = <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="keyword">while</span> (cin &gt;&gt; n &gt;&gt; m) &#123;</span><br><span class="line">        unordered_map&lt;<span class="keyword">int</span>, unordered_set&lt;<span class="keyword">int</span>&gt;&gt; mp;</span><br><span class="line">        <span class="keyword">int</span> a, b;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i ++) &#123;</span><br><span class="line">            cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">            mp[a].insert(b);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> q;</span><br><span class="line">        cin &gt;&gt; q;</span><br><span class="line">        <span class="keyword">while</span> (q --) &#123;</span><br><span class="line">            <span class="keyword">int</span> x, y;</span><br><span class="line">            cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">            <span class="keyword">int</span> cnt = <span class="number">1</span>;</span><br><span class="line">            ans = INT_MAX;</span><br><span class="line">            <span class="function">vector&lt;bool&gt; <span class="title">visited</span><span class="params">(n + <span class="number">1</span>, <span class="keyword">false</span>)</span></span>;</span><br><span class="line">            dfs(x, y, mp, visited, cnt);</span><br><span class="line">            <span class="keyword">if</span> (ans == INT_MAX)</span><br><span class="line">                cout &lt;&lt; -<span class="number">1</span> &lt;&lt; endl;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>n*n 棋盘，横竖不能在一起，全部排到对角线。</p>
+<p><a href="https://blog.csdn.net/qq_46047971/article/details/111477731">https://blog.csdn.net/qq_46047971/article/details/111477731</a></p>
+</li>
+</ol>
 ]]></content>
   </entry>
 </search>

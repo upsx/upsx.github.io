@@ -98,13 +98,13 @@
 <li>负载均衡算法</li>
 <li>分布式锁</li>
 </ol>
-<h2 id="2021-3-12-电话二面37分钟（部门boss给了A）"><a href="#2021-3-12-电话二面37分钟（部门boss给了A）" class="headerlink" title="2021-3-12 电话二面37分钟（部门boss给了A）"></a>2021-3-12 电话二面37分钟（部门boss给了A）</h2><ol>
+<h2 id="2021-3-12-电话二面37分钟"><a href="#2021-3-12-电话二面37分钟" class="headerlink" title="2021-3-12 电话二面37分钟"></a>2021-3-12 电话二面37分钟</h2><ol>
 <li>介绍一下你自己？主要问这些项目是你自学的还是实习或者实验室项目。（boss啊，只能老实回答，不能糊弄）</li>
 <li>秒杀系统设计。你的秒杀是异步实现，用户体验肯定差，实际不是这样实现的，所以你知道淘宝系统的实际设计吗（seata是一种刚刚及格的回答，性能差，基本不会用，但知道seata还算了解），所以基本不会答，必须要去了解。</li>
 <li>系统是怎么部署的？系统压测？用什么工具？</li>
 <li>CPU很高是为什么？系统排除bug？你有什么经验吗？</li>
 <li>你查看过JVM的内存吗？JVM怎么影响程序的性能？</li>
-<li>你用过top命令吗？其中node节点（？）是干什么的？</li>
+<li>你用过top命令吗？其中load average是干什么的？</li>
 <li>你实现过注解吗？在哪里干什么用的？</li>
 <li>你为什么用protostuff序列化机制？</li>
 <li>哪里听过上下文切换？答：进程线程，反问：你对内核态和用户态不知道吗？</li>
@@ -122,9 +122,48 @@
 <li><p>电话簿，最短路径，bfs解决。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> ans = INT_MAX;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, unordered_map&lt;<span class="keyword">int</span>, vector&lt;<span class="keyword">int</span>&gt;&gt;&amp; mp, unordered_set&lt;bool&gt;&amp; visited, <span class="keyword">int</span> cnt)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (visited[x])</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    visited[x] = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">if</span> (mp.count(x)) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num: mp[x]) &#123;</span><br><span class="line">            <span class="keyword">if</span> (num == y) &#123;</span><br><span class="line">                ans = min(ans, cnt);</span><br><span class="line">                visited[x - <span class="number">1</span>] = <span class="keyword">false</span>;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num: mp[x]) &#123;</span><br><span class="line">            <span class="keyword">if</span> (visited[num] == <span class="keyword">false</span>)</span><br><span class="line">                dfs(num, y, mp, visited, cnt + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    visited[x] = <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="keyword">while</span> (cin &gt;&gt; n &gt;&gt; m) &#123;</span><br><span class="line">        unordered_map&lt;<span class="keyword">int</span>, unordered_set&lt;<span class="keyword">int</span>&gt;&gt; mp;</span><br><span class="line">        <span class="keyword">int</span> a, b;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i ++) &#123;</span><br><span class="line">            cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">            mp[a].insert(b);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> q;</span><br><span class="line">        cin &gt;&gt; q;</span><br><span class="line">        <span class="keyword">while</span> (q --) &#123;</span><br><span class="line">            <span class="keyword">int</span> x, y;</span><br><span class="line">            cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">            <span class="keyword">int</span> cnt = <span class="number">1</span>;</span><br><span class="line">            ans = INT_MAX;</span><br><span class="line">            <span class="function">vector&lt;bool&gt; <span class="title">visited</span><span class="params">(n + <span class="number">1</span>, <span class="keyword">false</span>)</span></span>;</span><br><span class="line">            dfs(x, y, mp, visited, cnt);</span><br><span class="line">            <span class="keyword">if</span> (ans == INT_MAX)</span><br><span class="line">                cout &lt;&lt; -<span class="number">1</span> &lt;&lt; endl;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>n*n 棋盘，横竖不能在一起，全部排到对角线。</p>
+<li><p>n*n 棋盘，棋盘里有车，横竖不能在一起，全部移动到对角线，求最少移动次数？</p>
 <p><a href="https://blog.csdn.net/qq_46047971/article/details/111477731">https://blog.csdn.net/qq_46047971/article/details/111477731</a></p>
 </li>
+</ol>
+<h2 id="2021-3-13-电话三面22分钟"><a href="#2021-3-13-电话三面22分钟" class="headerlink" title="2021-3-13 电话三面22分钟"></a>2021-3-13 电话三面22分钟</h2><ol>
+<li>自我介绍</li>
+<li>你什么时候开始学习java开发的？</li>
+<li>你知道读写锁吗？让你实现怎么实现？（我就参照了JDK的实现，读锁标志，读锁计数器，写锁标志，需要用到3个变量）</li>
+<li>你的回答用了3个变量，怎么用一个变量实现？（回答用一个整型表示锁的状态：0：无锁，正数：读锁个数，-1：写锁）</li>
+<li>我看你有几个比赛经历？介绍一下你在比赛中的角色和工作？</li>
+<li>你对计算机网络、操作系统，数据库等哪一门课最熟悉？回答：计网</li>
+<li>你知道二层转发和三层路由吗？</li>
+<li>你知道内网和外网怎么交换数据的吗？(NAT)</li>
+<li>你认为你在学校、班级或者实验室是什么角色？比如code能力强，编程多、领导者等？回答：积极写代码，做项目，接收老板的指挥，协调小组成员做课题</li>
+<li>你认为你最应该提升自己什么？回答：视野，高考-》本科-》研究生，每上升一个阶段，进入不同的环境，视野不同，一旦工作了环境又改变，需要再次开阔自己的视野，找到自己的兴趣，深入技术。</li>
+<li>你对实习的地点有要求吗？选择一个你最接收的？</li>
+<li>反问环节。</li>
+</ol>
+<h2 id="2021-3-17-电话hr面16分钟"><a href="#2021-3-17-电话hr面16分钟" class="headerlink" title="2021-3-17 电话hr面16分钟"></a>2021-3-17 电话hr面16分钟</h2><ol>
+<li>介绍一下你自己</li>
+<li>你的3个优点</li>
+<li>你的不足点</li>
+<li>你与其他同学的不同点（突出点？）</li>
+<li>你的业余生活</li>
+<li>让你回到研一，你认为你需要改变什么？</li>
+<li>你的实习工作意向和职业规划</li>
+</ol>
+<h1 id="wxg-搜索"><a href="#wxg-搜索" class="headerlink" title="wxg-搜索"></a>wxg-搜索</h1><h2 id="2021-3-23-视频面80分钟"><a href="#2021-3-23-视频面80分钟" class="headerlink" title="2021-3-23 视频面80分钟"></a>2021-3-23 视频面80分钟</h2><ol>
+<li>自我介绍</li>
+<li>t1：反转链表</li>
+<li>t2：随机链表的拷贝</li>
+<li>什么是堆</li>
+<li>时间复杂度是O(nlogn)的经典算法</li>
+<li>浏览器输入url发生了什么？越详细越好</li>
+<li>秒杀项目</li>
+<li>RabbitMQ的作用</li>
+<li>为什么不用redis存储订单消息？</li>
+<li>nginx负载算法</li>
+<li>http和https</li>
+<li>protoStuff序列化的压缩机制（必须去了解）</li>
+<li>订单记录很多，怎么优化数据库的查询速度</li>
+<li>python的迭代器</li>
 </ol>
 ]]></content>
   </entry>

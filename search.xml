@@ -223,6 +223,19 @@
 <li>。。。。</li>
 <li>这次面试，认为主要考核 个人项目经历 + 基础 + 认知。</li>
 </ol>
+<h1 id="美团"><a href="#美团" class="headerlink" title="美团"></a>美团</h1><h2 id="2021-4-8-视频面45分钟"><a href="#2021-4-8-视频面45分钟" class="headerlink" title="2021-4-8 视频面45分钟"></a>2021-4-8 视频面45分钟</h2><ol>
+<li>自我介绍</li>
+<li>简历提问 + 基础（尽量回答详细点）</li>
+<li>nginx的动静分离和负载均衡</li>
+<li>sentinel的流控和降级</li>
+<li>redis解决超卖问题</li>
+<li>线程池的运行过程</li>
+<li>一致性哈希负载均衡算法</li>
+<li>你对hashmap的认识</li>
+<li>你对数据库的认识</li>
+<li>算法题：两个升序数组合并。</li>
+<li>反问环节</li>
+</ol>
 ]]></content>
   </entry>
 </search>
